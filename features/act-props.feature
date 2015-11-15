@@ -3,9 +3,10 @@ Feature: Get and set click action properties
   As a developer using python-pptx
   I need a set of properties on ActionSetting
 
+  @wip
   Scenario Outline: get action
      Given a shape having click action <action>
-      Then click_action.setting is <value>
+      Then click_action.action is <value>
 
     Examples: Click actions
       | action             | value             |

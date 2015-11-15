@@ -75,6 +75,7 @@ API Documentation
    api/table
    api/chart
    api/text
+   api/action
    api/dml
    api/image
    api/exc

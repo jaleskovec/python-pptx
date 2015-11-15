@@ -122,12 +122,12 @@ class DescribeBaseShape(object):
         'p:cxnSp/p:nvCxnSpPr/p:cNvPr',
         'p:pic/p:nvPicPr/p:cNvPr',
     ])
-    def click_action_fixture(self, request, ActionSetting_, click_action_):
+    def click_action_fixture(self, request, ActionSetting_, action_setting_):
         sp_cxml = request.param
         sp = element(sp_cxml)
         cNvPr = sp.xpath('//p:cNvPr')[0]
         shape = BaseShape(sp, None)
-        return shape, ActionSetting_, cNvPr, click_action_
+        return shape, ActionSetting_, cNvPr, action_setting_
 
     @pytest.fixture(params=[
         ('sp',           False), ('sp_with_ext',           True),
@@ -278,14 +278,14 @@ class DescribeBaseShape(object):
     # fixture components ---------------------------------------------
 
     @pytest.fixture
-    def ActionSetting_(self, request, click_action_):
+    def ActionSetting_(self, request, action_setting_):
         return class_mock(
             request, 'pptx.shapes.base.ActionSetting',
-            return_value=click_action_
+            return_value=action_setting_
         )
 
     @pytest.fixture
-    def click_action_(self, request):
+    def action_setting_(self, request):
         return instance_mock(request, ActionSetting)
 
     @pytest.fixture

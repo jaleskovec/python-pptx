@@ -44,8 +44,8 @@ def given_a_shape_having_click_action_action(context, action):
 
 # then ====================================================
 
-@then('click_action.setting is {member_name}')
-def then_click_action_setting_is_value(context, member_name):
+@then('click_action.action is {member_name}')
+def then_click_action_action_is_value(context, member_name):
     click_action = context.shape.click_action
     expected_value = getattr(PP_ACTION, member_name)
     assert click_action.action == expected_value
