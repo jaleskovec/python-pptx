@@ -70,6 +70,8 @@ release = __version__
 # file that is read. This is the right place to add substitutions that should
 # be available in every file.
 rst_epilog = """
+.. |ActionSetting| replace:: :class:`ActionSetting`
+
 .. |Adjustment| replace:: :class:`Adjustment`
 
 .. |AdjustmentCollection| replace:: :class:`AdjustmentCollection`
